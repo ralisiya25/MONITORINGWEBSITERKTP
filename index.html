@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RendangKoroSmart - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>RendangKoroSmart</h1>
+    <nav>Dashboard Monitoring Produk</nav>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <div class="card scan-card">
+        <h2>Scan Label Indikator</h2>
+        <input type="file" accept="image/*" capture="environment" id="imageInput">
+        <canvas id="canvas" style="display:none;"></canvas>
+        <div id="previewWrap">
+          <div id="colorPreview" class="color-preview"></div>
+          <div id="scanInfo">
+            <p id="scanStatus">Belum ada hasil scan</p>
+            <p id="scanQuality"></p>
+            <p id="scanPrice"></p>
+          </div>
+        </div>
+        <button id="clearBtn" class="btn">Clear</button>
+      </div>
+
+      <div class="card stats-card">
+        <h2>Ringkasan</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-value" id="statQuality">-</div>
+            <div class="stat-label">Kualitas Terkini</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="statPrice">-</div>
+            <div class="stat-label">Harga Terkini</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="statLastScan">-</div>
+            <div class="stat-label">Terakhir Scan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="card table-card">
+        <h2>Daftar Referensi Warna</h2>
+        <table id="refTable">
+          <thead>
+            <tr><th>No</th><th>HEX</th><th>RGB</th><th>Status</th><th>Harga</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card manual-card">
+        <h2>Simulasi Manual</h2>
+        <label>Masukkan HEX: <input id="manualHex" placeholder="#421A25"></label>
+        <label>Hari: <input id="manualDay" type="number" value="0" min="0"></label>
+        <button id="applyManual" class="btn">Terapkan</button>
+        <p class="muted">Gunakan simulasi untuk melihat hasil tanpa scan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built for prototype — buka <code>index.html</code> di browser (Live Server disarankan).
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
